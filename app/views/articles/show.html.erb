@@ -1,4 +1,14 @@
 <p id="notice"><%= notice %></p>
+<div class="card"
+  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path @article.photo, height: 600, width: 400, crop: :fill %>')">
+  <div class="card-category">Popular</div>
+  <div class="card-description">
+    <h2>Some stuff</h2>
+    <p>Very cool stuff, useful and smart</p>
+  </div>
+  <a class="card-link" href="#" ></a>
+</div>
 
 <p>
   <strong>Title:</strong>
@@ -7,8 +17,14 @@
 
 <p>
   <strong>Body:</strong>
+  <br>
+  <%= cl_image_tag @article.photo, height: 300, width: 400, crop: :fill %>
+  <br>
   <%= @article.body %>
+  <br>
 </p>
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>
+
+
